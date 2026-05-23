@@ -1,0 +1,5 @@
+src/blocks/example/block.json
+{
+	"apiVersion": 3,
+	"name": "fixture/example"
+}

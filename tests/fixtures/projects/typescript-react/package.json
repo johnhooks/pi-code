@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"react": "latest"
+	},
+	"devDependencies": {
+		"typescript": "latest"
+	}
+}

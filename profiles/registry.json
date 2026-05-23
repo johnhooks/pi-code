@@ -1,0 +1,128 @@
+{
+  "profiles": {
+    "php": {
+      "description": "General PHP conventions. Type safety, error handling, SQL safety, security, testing, dependency injection.",
+      "detect": [
+        "composer.json",
+        "*.php"
+      ],
+      "requires": []
+    },
+    "javascript": {
+      "description": "JavaScript conventions. Readability, control flow, async code, modules, and runtime boundaries.",
+      "detect": [
+        "package.json",
+        "*.js",
+        "*.mjs",
+        "*.cjs"
+      ],
+      "requires": []
+    },
+    "typescript": {
+      "description": "TypeScript project conventions. Type safety, imports, narrowing, async code, and external API types.",
+      "detect": [
+        "tsconfig.json",
+        "*.ts",
+        "*.tsx",
+        "package.json:devDependencies.typescript",
+        "package.json:dependencies.typescript"
+      ],
+      "requires": ["javascript"]
+    },
+    "react": {
+      "description": "React conventions. Components, props, state, effects, rendering, forms, and performance.",
+      "detect": [
+        "package.json:dependencies.react",
+        "package.json:devDependencies.react",
+        "*.jsx",
+        "*.tsx"
+      ],
+      "requires": ["javascript"]
+    },
+    "wordpress": {
+      "description": "WordPress plugin and theme development. Hooks, sanitization, data access, admin screens, REST.",
+      "detect": [
+        "readme.txt",
+        "style.css:Theme Name:",
+        "functions.php",
+        "*.php:Plugin Name:",
+        "wp-content/",
+        "composer.json:require.johnpbloch/wordpress-core"
+      ],
+      "requires": ["php", "wordpress-i18n"]
+    },
+    "wordpress-i18n": {
+      "description": "WordPress internationalization conventions for PHP and JavaScript. Text domains, translated output, placeholders, translator comments, and @wordpress/i18n.",
+      "detect": [],
+      "requires": []
+    },
+    "wordpress-blocks": {
+      "description": "WordPress block editor conventions. block.json metadata, editor primitives, dynamic rendering, frontend behavior, and Interactivity API.",
+      "detect": [
+        "blocks/",
+        "src/blocks/",
+        "src/wp-includes/blocks/",
+        "packages/block-editor/",
+        "packages/blocks/",
+        "package.json:dependencies.@wordpress/blocks",
+        "package.json:devDependencies.@wordpress/blocks",
+        "package.json:dependencies.@wordpress/block-editor",
+        "package.json:devDependencies.@wordpress/block-editor",
+        "package.json:dependencies.@wordpress/scripts",
+        "package.json:devDependencies.@wordpress/scripts"
+      ],
+      "requires": ["wordpress", "javascript"]
+    },
+    "laravel": {
+      "description": "Laravel application development. Eloquent, service providers, middleware, queues.",
+      "detect": [
+        "artisan",
+        "composer.json:require.laravel/framework",
+        "app/Http/Kernel.php",
+        "routes/web.php"
+      ],
+      "requires": ["php"]
+    },
+    "codeception": {
+      "description": "Codeception testing framework. Unit, functional, and integration tests.",
+      "detect": [
+        "codeception.yml",
+        "codeception.dist.yml",
+        "composer.json:require-dev.codeception/codeception"
+      ],
+      "requires": []
+    },
+    "wp-browser": {
+      "description": "WP Browser testing for WordPress plugins. WPLoader, WPDb, WPBrowser, WPFilesystem, integration and end-to-end suites.",
+      "detect": [
+        "composer.json:require-dev.lucatume/wp-browser",
+        "codeception.dist.yml:lucatume\\WPBrowser",
+        "tests/Integration.suite.yml:WPLoader",
+        "tests/EndToEnd.suite.yml:WPBrowser"
+      ],
+      "requires": ["codeception", "wordpress"]
+    },
+    "wordpress-components": {
+      "description": "@wordpress/components UI library. React components, form controls, modals, layout.",
+      "detect": [
+        "package.json:dependencies.@wordpress/components"
+      ],
+      "requires": []
+    },
+    "wordpress-data": {
+      "description": "@wordpress/data state management. Stores, selectors, actions, resolvers, React hooks.",
+      "detect": [
+        "package.json:dependencies.@wordpress/data"
+      ],
+      "requires": []
+    },
+    "workos-auth": {
+      "description": "WorkOS authentication. JWT/JWKS verification, AuthKit login, session middleware.",
+      "detect": [
+        "composer.json:require.workos/workos-php-laravel",
+        "config/services.php:workos"
+      ],
+      "requires": ["laravel"]
+    }
+  }
+}

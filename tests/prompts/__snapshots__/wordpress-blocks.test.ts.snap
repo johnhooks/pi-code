@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches WordPress blocks prompt profiles 1`] = `
+[
+  "wordpress-blocks",
+]
+`;

@@ -1,0 +1,64 @@
+{
+	"name": "@bitmachina/pi-code",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@11.2.2",
+	"description": "Convention profiles and Pi extension for project-aware agent context.",
+	"exports": {
+		".": {
+			"types": "./dist/src/pi-code.d.ts",
+			"default": "./dist/src/pi-code.js"
+		}
+	},
+	"keywords": [
+		"pi-package",
+		"pi-extension"
+	],
+	"files": [
+		"dist",
+		"docs",
+		"profiles",
+		"skills",
+		"workflows",
+		"README.md"
+	],
+	"pi": {
+		"extensions": [
+			"./dist/src/pi-code.js"
+		],
+		"skills": [
+			"./skills"
+		]
+	},
+	"engines": {
+		"node": ">=24"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"build": "tsgo -p tsconfig.build.json",
+		"prepack": "pnpm run build",
+		"test": "vitest run",
+		"typecheck": "tsgo --noEmit",
+		"lint:md": "prettier --check \"**/*.md\"",
+		"lint:md:fix": "prettier --write \"**/*.md\"",
+		"lint": "biome check . && tsgo --noEmit && prettier --check \"**/*.md\"",
+		"lint:fix": "biome check --write . && prettier --write \"**/*.md\"",
+		"lint:ts": "biome check .",
+		"lint:ts:fix": "biome check --write .",
+		"detect": "node --import tsx scripts/detect-project-type.ts"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.14",
+		"@earendil-works/pi-coding-agent": "^0.75.4",
+		"@types/node": "^25.6.2",
+		"@typescript/native-preview": "7.0.0-dev.20260522.1",
+		"husky": "^9.1.7",
+		"prettier": "^3.5.3",
+		"tsx": "^4.21.0",
+		"vitest": "^4.1.5"
+	}
+}

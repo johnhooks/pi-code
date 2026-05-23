@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches WordPress blocks from block registration tool read 1`] = `
+[
+  "wordpress-blocks",
+]
+`;
+
+exports[`matches WordPress blocks from block.json tool read 1`] = `
+[
+  "wordpress-blocks",
+]
+`;

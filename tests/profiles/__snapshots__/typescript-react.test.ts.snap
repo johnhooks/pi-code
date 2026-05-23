@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`detects TypeScript React project profiles 1`] = `
+[
+  "javascript",
+  "typescript",
+  "react",
+]
+`;
